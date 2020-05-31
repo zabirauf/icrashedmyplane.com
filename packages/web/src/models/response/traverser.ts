@@ -1,14 +1,19 @@
+import Response from '@/models/response/index';
+import {
+  Action,
+  Option,
+  Question,
+  SurveyTraverser
+  } from 'i-just-crashed-my-plane-survey';
+import {
+  endNode,
+  isActionResponseNode,
+  isQuestionResponseNode,
+  ResponseNode
+  } from '@/models/response/answer';
+import { isPlainObject } from 'lodash-es';
 /* eslint-disable import/no-cycle */
 
-import { isPlainObject } from 'lodash-es'
-import Response from '@/models/response/index'
-import {
-  Action, Option, Question
-} from '@/models/survey'
-import {
-  ResponseNode, endNode, isActionResponseNode, isQuestionResponseNode
-} from '@/models/response/answer'
-import SurveyTraverser from '@/models/survey/traverser'
 
 export type BeyondEndNode = 'beyondEndNode'
 export const beyondEndNode: BeyondEndNode = 'beyondEndNode'

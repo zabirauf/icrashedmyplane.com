@@ -13,11 +13,9 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": ["webpack-env", "mocha", "chai"],
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-    "outDir": "dist/"
+    "outDir": "dist/",
+    "declaration": true
   },
   "include": ["src/**/*.ts", "tests/unit/**/*.ts"],
   "exclude": ["node_modules"]

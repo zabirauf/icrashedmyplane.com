@@ -1,6 +1,10 @@
 import {
-  IncidentLevel, LevelAction, Option, Question, QuestionAction
-} from '@/models/survey'
+  IncidentLevel,
+  LevelAction,
+  Option,
+  Question,
+  QuestionAction
+  } from '../../models/survey';
 
 export const classifyAsAccident = new LevelAction(IncidentLevel.ACCIDENT)
 export const classifyAsSeriousIncident = new LevelAction(IncidentLevel.SERIOUS_INCIDENT)

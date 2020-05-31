@@ -14,7 +14,7 @@
   import { Getter } from 'vuex-class'
   import { find, isNil } from 'lodash-es'
   import Welcome from '@/views/Welcome.vue'
-  import surveyOrder from '@/data/surveyOrder'
+  import { surveyOrder } from 'i-just-crashed-my-plane-survey'
   import Response from '@/models/response'
   import Finished from '@/views/Finished.vue'
   import Prompt from '@/models/response/prompt'

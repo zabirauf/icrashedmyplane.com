@@ -1,5 +1,5 @@
-import { incidentSurvey } from '@/data/surveys/incident';
-import { profileSurvey } from '@/data/surveys/profile';
+import { incidentSurvey } from './surveys/incident';
+import { profileSurvey } from './surveys/profile';
 
 /** The order to present {@link Survey}s to the user. */
 

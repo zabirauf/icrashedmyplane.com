@@ -1,13 +1,17 @@
+import Response from '@/models/response';
+import { ActionContext, Module } from 'vuex';
+import {
+  assign,
+  cloneDeep,
+  isNil,
+  max,
+  reduce,
+  values
+  } from 'lodash-es';
+import { endNode, QuestionResponseNode, walkResponseTree } from '@/models/response/answer';
+import { Flag, IncidentLevel, surveyOrder } from 'i-just-crashed-my-plane-survey';
 /* eslint-disable func-names */
 
-import { ActionContext, Module } from 'vuex'
-import {
-  assign, cloneDeep, isNil, max, reduce, values
-} from 'lodash-es'
-import Response from '@/models/response'
-import { Flag, IncidentLevel } from '@/models/survey'
-import { endNode, QuestionResponseNode, walkResponseTree } from '@/models/response/answer'
-import surveyOrder from '@/data/surveyOrder'
 
 /** The object type of the root Vuex state. */
 

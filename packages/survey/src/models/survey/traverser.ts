@@ -4,7 +4,7 @@ import {
   Question,
   QuestionAction,
   Survey
-  } from '@/models/survey/index';
+  } from './index';
 import { each } from 'lodash-es';
 /* eslint-disable import/no-cycle */
 
@@ -87,7 +87,7 @@ export interface SurveyVisitor {
  * it is presented to the user.
  */
 
-export default class SurveyTraverser {
+export class SurveyTraverser {
   /**
    * Creates a new traverser for a Survey.
    * @param survey The Survey to traverse.

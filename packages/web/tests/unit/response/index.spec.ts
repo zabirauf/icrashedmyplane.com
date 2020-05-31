@@ -1,15 +1,15 @@
-import { expect } from 'chai'
-import { constant, times } from 'lodash-es'
-import { makeResponse, mergeAnswers } from '../support'
+import Response from '@/models/response';
 import {
   accidentAnswer,
   incidentAnswer,
   seriousIncidentAnswer,
   unfinishedAnswerEndingInSingleQuestion
-} from './fixtures'
-import Response from '@/models/response'
-import { Flag, IncidentLevel, Question } from '@/models/survey'
-import { ResponseNode, endNode, QuestionResponseNode } from '@/models/response/answer'
+  } from './fixtures';
+import { constant, times } from 'lodash-es';
+import { endNode, QuestionResponseNode, ResponseNode } from '@/models/response/answer';
+import { expect } from 'chai';
+import { Flag, IncidentLevel, Question } from 'i-just-crashed-my-plane-survey';
+import { makeResponse, mergeAnswers } from '../support';
 
 describe('Response', () => {
   describe('isFinished', () => {

@@ -1,8 +1,8 @@
+import Response from '@/models/response/index';
+import ResponseTraverser, { CurrentResponseNode } from '@/models/response/traverser';
+import { SurveyNode } from 'i-just-crashed-my-plane-survey';
 /* eslint-disable import/no-cycle */
 
-import { SurveyNode } from '@/models/survey'
-import Response from '@/models/response/index'
-import ResponseTraverser, { CurrentResponseNode } from '@/models/response/traverser'
 
 /**
  * Interface for the callback receiver, used when traversing a {@link Response} with a

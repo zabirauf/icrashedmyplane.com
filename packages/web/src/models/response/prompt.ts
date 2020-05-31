@@ -1,6 +1,4 @@
-import {
-  Option, Question, SurveyNode
-} from '@/models/survey'
+import { Option, Question, SurveyNode } from 'i-just-crashed-my-plane-survey';
 
 /**
  * A Question to ask the user, along with the contextual information about that question needed to

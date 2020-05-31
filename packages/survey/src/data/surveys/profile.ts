@@ -4,7 +4,7 @@ import {
   Option,
   Question,
   Survey
-  } from '@/models/survey';
+  } from '../../models/survey';
 
 export const profileSurvey = new Survey('profile',
   new Question('root', [

@@ -1,7 +1,6 @@
-import { expect } from 'chai'
-import incidentSurvey from '@/data/surveys/incident'
-import { QuestionAction } from '@/models/survey'
-import { answerPathFromQuestionPath } from '@/models/response/prompt'
+import { answerPathFromQuestionPath } from '@/models/response/prompt';
+import { expect } from 'chai';
+import { incidentSurvey, QuestionAction } from 'i-just-crashed-my-plane-survey';
 
 describe('answerPathFromQuestionPath', () => {
   it('returns the answer path for a question path', () => {

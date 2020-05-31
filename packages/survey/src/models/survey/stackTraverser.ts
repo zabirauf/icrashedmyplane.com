@@ -1,5 +1,5 @@
-import SurveyTraverser from '@/models/survey/traverser';
-import { Survey, SurveyNode } from '@/models/survey/index';
+import { Survey, SurveyNode } from './index';
+import { SurveyTraverser } from './traverser';
 /* eslint-disable import/no-cycle */
 
 /**

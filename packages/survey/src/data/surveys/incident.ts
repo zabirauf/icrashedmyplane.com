@@ -11,14 +11,14 @@ import {
   yesMeansAccidentNoMeansIncident,
   yesMeansIncident,
   yesMeansSeriousIncidentNoMeansIncident
-  } from '@/data/surveys/incidentSurveyShorthand';
+  } from './incidentSurveyShorthand';
 import {
   Flag,
   Option,
   Question,
   QuestionAction,
   Survey
-  } from '@/models/survey';
+  } from '../../models/survey';
 
 export const incidentSurvey = new Survey('incident',
   new Question('root', [
