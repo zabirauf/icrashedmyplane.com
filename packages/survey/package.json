@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "serve": "tsc -w"
   },
   "dependencies": {
     "lodash-es": "^4.17.15"

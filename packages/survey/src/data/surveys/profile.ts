@@ -12,4 +12,4 @@ export const profileSurvey = new Survey('profile',
     new Option('airCarrier', new FlagAction(Flag.AIR_CARRIER)),
     new Option('helicopter', new FlagAction(Flag.HELICOPTER))
   ],
-  { multi: true }))
+  { multi: true}))

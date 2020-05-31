@@ -5,6 +5,7 @@
     "lerna": "^3.22.0"
   },
   "scripts": {
-    "setup": "lerna bootstrap"
+    "setup": "lerna bootstrap",
+    "serve": "lerna run serve --parallel"
   }
 }
