@@ -1,12 +1,13 @@
-/* eslint-disable import/no-cycle */
-
-import { each } from 'lodash-es'
-import Survey, {
+import {
   Action,
   Option,
   Question,
-  QuestionAction
-} from '@/models/survey/index'
+  QuestionAction,
+  Survey
+  } from '@/models/survey/index';
+import { each } from 'lodash-es';
+/* eslint-disable import/no-cycle */
+
 
 /**
  * Interface for the callback receiver, used when traversing a {@link Survey} with a
@@ -14,7 +15,6 @@ import Survey, {
  */
 
 export interface SurveyVisitor {
-
   /**
    * Wraps a call to {@link .visitQuestion}, allowing you to perform tail recursion on the call.
    * If you do not call `run` within your implementation, no downstream nodes will be traversed.
@@ -102,61 +102,61 @@ export default class SurveyTraverser {
    */
 
   traverse(visitor: SurveyVisitor): void {
-    this.visitQuestion(this.survey.root, visitor)
+    this.visitQuestion(this.survey.root, visitor);
   }
 
   private visitQuestion(question: Question, visitor: SurveyVisitor): boolean {
-    let shouldContinue = true
+    let shouldContinue = true;
     const run = () => {
-      if (visitor.visitQuestion) shouldContinue = visitor.visitQuestion(question)
-      if (!shouldContinue) return shouldContinue
+      if (visitor.visitQuestion) shouldContinue = visitor.visitQuestion(question);
+      if (!shouldContinue) return shouldContinue;
 
       each(question.options, (option, index) => {
-        shouldContinue = this.visitOption(option, index, visitor)
-        return shouldContinue
-      })
+        shouldContinue = this.visitOption(option, index, visitor);
+        return shouldContinue;
+      });
 
-      return shouldContinue
-    }
+      return shouldContinue;
+    };
 
-    if (visitor.aroundVisitQuestion) visitor.aroundVisitQuestion(question, run)
-    else run()
+    if (visitor.aroundVisitQuestion) visitor.aroundVisitQuestion(question, run);
+    else run();
 
-    return shouldContinue
+    return shouldContinue;
   }
 
   private visitOption(option: Option, index: number, visitor: SurveyVisitor): boolean {
-    let shouldContinue = true
+    let shouldContinue = true;
     const run = () => {
-      if (visitor.visitOption) shouldContinue = visitor.visitOption(option, index)
-      if (!shouldContinue) return shouldContinue
+      if (visitor.visitOption) shouldContinue = visitor.visitOption(option, index);
+      if (!shouldContinue) return shouldContinue;
 
-      shouldContinue = this.visitAction(option.action, visitor)
-      return shouldContinue
-    }
+      shouldContinue = this.visitAction(option.action, visitor);
+      return shouldContinue;
+    };
 
-    if (visitor.aroundVisitOption) visitor.aroundVisitOption(option, index, run)
-    else run()
+    if (visitor.aroundVisitOption) visitor.aroundVisitOption(option, index, run);
+    else run();
 
-    return shouldContinue
+    return shouldContinue;
   }
 
   private visitAction(action: Action, visitor: SurveyVisitor): boolean {
-    let shouldContinue = true
+    let shouldContinue = true;
     const run = () => {
-      if (visitor.visitAction) shouldContinue = visitor.visitAction(action)
-      if (!shouldContinue) return shouldContinue
+      if (visitor.visitAction) shouldContinue = visitor.visitAction(action);
+      if (!shouldContinue) return shouldContinue;
 
       if (action instanceof QuestionAction) {
-        shouldContinue = this.visitQuestion(action.question, visitor)
+        shouldContinue = this.visitQuestion(action.question, visitor);
       }
 
-      return shouldContinue
-    }
+      return shouldContinue;
+    };
 
-    if (visitor.aroundVisitAction) visitor.aroundVisitAction(action, run)
-    else run()
+    if (visitor.aroundVisitAction) visitor.aroundVisitAction(action, run);
+    else run();
 
-    return shouldContinue
+    return shouldContinue;
   }
 }

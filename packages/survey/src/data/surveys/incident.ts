@@ -1,14 +1,26 @@
 import {
-  classifyAsAccident, classifyAsSeriousIncident, noAskQuestion, noMeansIncident, noMeansAccident,
-  noMeansAccidentYesMeansIncident, noMeansSeriousIncidentYesMeansIncident, yesAskQuestion,
-  yesMeansIncident, yesMeansAccidentNoMeansIncident, yesMeansSeriousIncidentNoMeansIncident,
-  classifyAsIncident
-} from '@/data/surveys/incidentSurveyShorthand'
-import Survey, {
-  Flag, Option, Question, QuestionAction
-} from '@/models/survey'
+  classifyAsAccident,
+  classifyAsIncident,
+  classifyAsSeriousIncident,
+  noAskQuestion,
+  noMeansAccident,
+  noMeansAccidentYesMeansIncident,
+  noMeansIncident,
+  noMeansSeriousIncidentYesMeansIncident,
+  yesAskQuestion,
+  yesMeansAccidentNoMeansIncident,
+  yesMeansIncident,
+  yesMeansSeriousIncidentNoMeansIncident
+  } from '@/data/surveys/incidentSurveyShorthand';
+import {
+  Flag,
+  Option,
+  Question,
+  QuestionAction,
+  Survey
+  } from '@/models/survey';
 
-const incidentSurvey = new Survey('incident',
+export const incidentSurvey = new Survey('incident',
   new Question('root', [
     new Option('death',
       new QuestionAction(
@@ -232,5 +244,3 @@ const incidentSurvey = new Survey('incident',
       { data: { category: 'surface' }, only: [Flag.AIR_CARRIER] })
   ],
   { multi: true }))
-
-export default incidentSurvey

@@ -1,7 +1,6 @@
+import SurveyTraverser from '@/models/survey/traverser';
+import { Survey, SurveyNode } from '@/models/survey/index';
 /* eslint-disable import/no-cycle */
-
-import Survey, { SurveyNode } from '@/models/survey/index'
-import SurveyTraverser from '@/models/survey/traverser'
 
 /**
  * Interface for the callback receiver, used when traversing a {@link Survey} with a
@@ -9,7 +8,6 @@ import SurveyTraverser from '@/models/survey/traverser'
  */
 
 export interface SurveyStackVisitor {
-
   /**
    * Called when a node is visited in the {@link Survey} tree.
    *
@@ -32,8 +30,7 @@ export default class SurveyStackTraverser {
    * @param survey The Survey to traverse.
    */
 
-  constructor(public survey: Survey) {
-  }
+  constructor(public survey: Survey) {}
 
   /**
    * Call this method to begin traversal.
@@ -42,37 +39,37 @@ export default class SurveyStackTraverser {
    */
 
   traverse(visitor: SurveyStackVisitor): void {
-    const stack: SurveyNode[] = []
+    const stack: SurveyNode[] = [];
     new SurveyTraverser(this.survey).traverse({
       aroundVisitQuestion(question, run) {
-        stack.push(question)
-        run()
-        stack.pop()
+        stack.push(question);
+        run();
+        stack.pop();
       },
 
       visitQuestion() {
-        return visitor.visitNode(stack)
+        return visitor.visitNode(stack);
       },
 
       aroundVisitOption(option, index, run) {
-        stack.push(option)
-        run()
-        stack.pop()
+        stack.push(option);
+        run();
+        stack.pop();
       },
 
       visitOption() {
-        return visitor.visitNode(stack)
+        return visitor.visitNode(stack);
       },
 
       aroundVisitAction(action, run) {
-        stack.push(action)
-        run()
-        stack.pop()
+        stack.push(action);
+        run();
+        stack.pop();
       },
 
       visitAction() {
-        return visitor.visitNode(stack)
-      }
-    })
+        return visitor.visitNode(stack);
+      },
+    });
   }
 }
