@@ -6,11 +6,11 @@
 
       <div class="question-options">
         <single-option v-for="(option, index) in question.options"
-                       :option="option"
-                       :survey-id="surveyID"
-                       :key="option.identifier"
-                       :index="index"
-                       @clicked="answerChosen(option.identifier)" />
+                      :option="option"
+                      :survey-id="surveyID"
+                      :key="option.identifier"
+                      :index="index"
+                      @clicked="answerChosen(option.identifier)" />
       </div>
     </div>
   </transition>
@@ -23,20 +23,20 @@
   import SingleOption from '@/components/Question/single/SingleOption.vue'
 
   /**
-   * Displays a {@link Question} for which the user can only choose one {@link Option}. Clicking on
-   * an option immediately advances the survey.
-   */
+  * Displays a {@link Question} for which the user can only choose one {@link Option}. Clicking on
+  * an option immediately advances the survey.
+  */
 
   @Component({
     components: { SingleOption }
   })
   export default class SingleQuestion extends AbstractQuestion {
     /**
-     * Called when an option is clicked. Records the answer to the store. Emits an error to
-     * the {@link ErrorBus} if that fails.
-     *
-     * @param identifier The identifier of the {@link Option} that was chosen.
-     */
+    * Called when an option is clicked. Records the answer to the store. Emits an error to
+    * the {@link ErrorBus} if that fails.
+    *
+    * @param identifier The identifier of the {@link Option} that was chosen.
+    */
 
     async answerChosen(identifier: string): Promise<void> {
       const index = this.question.options.findIndex(o => o.identifier === identifier)

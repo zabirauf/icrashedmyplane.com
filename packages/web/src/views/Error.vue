@@ -10,8 +10,8 @@
   import Component from 'vue-class-component'
 
   /**
-   * Displayed when an error occurs while taking a survey.
-   */
+  * Displayed when an error occurs while taking a survey.
+  */
 
   @Component
   export default class Error extends Vue {

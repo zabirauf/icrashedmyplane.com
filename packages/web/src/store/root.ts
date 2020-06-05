@@ -101,23 +101,23 @@ export default function createRootModule(
     actions: {
 
       /**
-       * Sets the `clickedContinue` boolean. Called when the user clicks the "Let's get started"
-       * button.
-       */
+      * Sets the `clickedContinue` boolean. Called when the user clicks the "Let's get started"
+      * button.
+      */
 
       clickContinue({ commit }: ActionContext<RootState, RootState>): void {
         commit('clickContinue')
       },
 
       /**
-       * Records an answer to a {@link Response} tree.
-       *
-       * @param surveyID The identifier for the {@link Survey} the Question belongs to.
-       * @param answerPath The path to the node within the Response tree to record the answer to.
-       * @param choices Which options the user chose, as an array of booleans, indexed by the
-       * {@link Option}'s index within the {@link Question.options} array.
-       * @return A promise that resolves once the action is complete.
-       */
+      * Records an answer to a {@link Response} tree.
+      *
+      * @param surveyID The identifier for the {@link Survey} the Question belongs to.
+      * @param answerPath The path to the node within the Response tree to record the answer to.
+      * @param choices Which options the user chose, as an array of booleans, indexed by the
+      * {@link Option}'s index within the {@link Question.options} array.
+      * @return A promise that resolves once the action is complete.
+      */
 
       recordAnswer(
         { commit }: ActionContext<RootState, RootState>,

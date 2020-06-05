@@ -12,9 +12,9 @@
   import Component from 'vue-class-component'
 
   /**
-   * Displayed when the user completes the survey and their answers do not qualify the incident as
-   * serious or as an accident.
-   */
+  * Displayed when the user completes the survey and their answers do not qualify the incident as
+  * serious or as an accident.
+  */
 
   @Component
   export default class Incident extends Vue {

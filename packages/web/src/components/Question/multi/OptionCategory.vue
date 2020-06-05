@@ -63,20 +63,20 @@ export default class OptionCategory extends Vue {
   }
 
   /**
-   * Returns whether an option has been selected.
-   * @param option The option.
-   * @return Whether the option has been selected.
-   */
+  * Returns whether an option has been selected.
+  * @param option The option.
+  * @return Whether the option has been selected.
+  */
 
   isSelected(option: Option): boolean {
     return this.selections.has(option.identifier);
   }
 
   /**
-   * Called when the user clicks an option. Passes a `toggle` event to the {@link MultiQuestion}.
-   *
-   * @param option The option that was selected
-   */
+  * Called when the user clicks an option. Passes a `toggle` event to the {@link MultiQuestion}.
+  *
+  * @param option The option that was selected
+  */
 
   toggle(option: Option): void {
     this.$emit("toggle", option.identifier);

@@ -24,9 +24,9 @@ export const HIGHEST_INCIDENT_LEVEL = IncidentLevel.ACCIDENT;
 
 export enum Flag {
   /**
-   * User was flying a multi-engine aircraft with a maximum certified takeoff weight greater than
-   * 12,500 lbs.
-   */
+  * User was flying a multi-engine aircraft with a maximum certified takeoff weight greater than
+  * 12,500 lbs.
+  */
   LARGE_MULTI,
 
   /** User was engaged in air carrier operations per FAR 119. */
@@ -84,9 +84,9 @@ export class Option {
   action: Action;
 
   /**
-   * The flag(s) that must be set to display this option. Otherwise this option is not displayed to
-   * the user.
-   */
+  * The flag(s) that must be set to display this option. Otherwise this option is not displayed to
+  * the user.
+  */
   only?: Flag[] = [];
 
   /** Additional data used when displaying the option. */
@@ -113,9 +113,9 @@ export class Option {
 
 export class Action {
   /**
-   * If `true`, this action does not result in any further user interaction for this path in the
-   * survey tree.
-   */
+  * If `true`, this action does not result in any further user interaction for this path in the
+  * survey tree.
+  */
   isTerminating = false;
 }
 

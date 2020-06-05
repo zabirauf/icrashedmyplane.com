@@ -34,9 +34,9 @@
   import Component from 'vue-class-component'
 
   /**
-   * Displayed when the user completes the survey and their answers qualify the incident as an
-   * accident.
-   */
+  * Displayed when the user completes the survey and their answers qualify the incident as an
+  * accident.
+  */
 
   @Component
   export default class Accident extends Vue {

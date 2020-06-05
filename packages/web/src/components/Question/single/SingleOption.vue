@@ -1,9 +1,9 @@
 <template>
   <a href="#"
-     @click.prevent="clicked()"
-     class="option option-single"
-     :class="className"
-     :data-cy="option.identifier">
+    @click.prevent="clicked()"
+    class="option option-single"
+    :class="className"
+    :data-cy="option.identifier">
     {{title}}
   </a>
 </template>
@@ -14,9 +14,9 @@
   import AbstractOption from '@/components/Question/AbstractOption'
 
   /**
-   * Displays an option for a {@link SingleQuestion}. Clicking the option immediately records the
-   * answer and advances the survey.
-   */
+  * Displays an option for a {@link SingleQuestion}. Clicking the option immediately records the
+  * answer and advances the survey.
+  */
 
   @Component
   export default class SingleOption extends AbstractOption {

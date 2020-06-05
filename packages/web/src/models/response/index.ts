@@ -48,16 +48,16 @@ export default class Response {
   surveyIdentifier: string;
 
   /**
-   * The root node for the response tree. An unstarted response has {@link .endNode} as its root
-   * node.
-   */
+  * The root node for the response tree. An unstarted response has {@link .endNode} as its root
+  * node.
+  */
 
   rootNode: QuestionResponseNode | EndNode = endNode;
 
   /**
-   * Creates a new Response for a Survey.
-   * @param surveyID The identifier for the {@link Survey}.
-   */
+  * Creates a new Response for a Survey.
+  * @param surveyID The identifier for the {@link Survey}.
+  */
 
   constructor(surveyID: string) {
     this.surveyIdentifier = surveyID;
@@ -74,9 +74,9 @@ export default class Response {
   }
 
   /**
-   * @return Whether the user has answered all the questions in the Survey (excluding questions that
-   * were not asked because they are outside of the response tree).
-   */
+  * @return Whether the user has answered all the questions in the Survey (excluding questions that
+  * were not asked because they are outside of the response tree).
+  */
 
   get isFinished(): boolean {
     if (!this.isStarted) return false;
@@ -100,10 +100,10 @@ export default class Response {
   }
 
   /**
-   * @return The highest incident level assigned by a {@link LevelAction} from a question the user
-   * has already answered. In other words, the highest incident level this Response has qualified
-   * for based on the questions answered.
-   */
+  * @return The highest incident level assigned by a {@link LevelAction} from a question the user
+  * has already answered. In other words, the highest incident level this Response has qualified
+  * for based on the questions answered.
+  */
 
   get highestIncidentLevel(): IncidentLevel | null {
     let currentHighestLevel: IncidentLevel | null = null;
@@ -126,10 +126,10 @@ export default class Response {
   }
 
   /**
-   * @return The highest incident level assigned by a {@link LevelAction} from a question the user
-   * can still answer. In other words, the highest incident level this Response could qualify
-   * for based on the questions that haven't been asked yet but could still be asked.
-   */
+  * @return The highest incident level assigned by a {@link LevelAction} from a question the user
+  * can still answer. In other words, the highest incident level this Response could qualify
+  * for based on the questions that haven't been asked yet but could still be asked.
+  */
 
   get highestPossibleIncidentLevel(): IncidentLevel {
     let currentHighestLevel = IncidentLevel.INCIDENT;
@@ -158,9 +158,9 @@ export default class Response {
   }
 
   /**
-   * @return `true` if it's not possible for any future question to raise the incident level higher
-   * than {@link .highestIncidentLevel}.
-   */
+  * @return `true` if it's not possible for any future question to raise the incident level higher
+  * than {@link .highestIncidentLevel}.
+  */
 
   get isEffectivelyFinished(): boolean {
     return (
@@ -171,9 +171,9 @@ export default class Response {
   }
 
   /**
-   * @return Information about the next {@link Question} to ask the user, or `null` if the response
-   * is finished.
-   */
+  * @return Information about the next {@link Question} to ask the user, or `null` if the response
+  * is finished.
+  */
 
   get nextQuestion(): Prompt | null {
     let questionPath: SurveyNode[] | null = null;
@@ -228,8 +228,8 @@ export default class Response {
   }
 
   /**
-   * @return The list of regulations under 49 CFR that contributed to the incident level.
-   */
+  * @return The list of regulations under 49 CFR that contributed to the incident level.
+  */
 
   get contributingRegulations(): Set<string> {
     const regulations = new Set<string>();
@@ -256,9 +256,9 @@ export default class Response {
   }
 
   /**
-   * @return The set of flags that were set to true by {@link FlagAction}s linked to options the
-   * user chose. In other words, the flags that are true based on the user's responses.
-   */
+  * @return The set of flags that were set to true by {@link FlagAction}s linked to options the
+  * user chose. In other words, the flags that are true based on the user's responses.
+  */
 
   get flags(): Set<Flag> {
     const flags = new Set<Flag>();

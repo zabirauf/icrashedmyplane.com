@@ -8,8 +8,8 @@
   import Container from '@/views/Container.vue'
 
   /**
-   * Root view for the application.
-   */
+  * Root view for the application.
+  */
 
   @Component({
     components: { Container }

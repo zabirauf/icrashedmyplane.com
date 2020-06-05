@@ -28,8 +28,8 @@
   import Component from 'vue-class-component'
 
   /**
-   * Displayed when the user completes the survey and their answers qualify the incident as serious.
-   */
+  * Displayed when the user completes the survey and their answers qualify the incident as serious.
+  */
 
   @Component
   export default class SeriousIncident extends Vue {

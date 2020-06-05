@@ -11,10 +11,10 @@ export default interface Prompt {
   surveyID: string;
 
   /**
-   * The path within the {@link Response} tree to record the answer, once the answer is given.
-   * Answer paths are arrays of numbers, each number representing an index in a {@link QuestionNode}
-   * to follow. Answer paths must be complete; in other words, they must end at a leaf node.
-   */
+  * The path within the {@link Response} tree to record the answer, once the answer is given.
+  * Answer paths are arrays of numbers, each number representing an index in a {@link QuestionNode}
+  * to follow. Answer paths must be complete; in other words, they must end at a leaf node.
+  */
   answerPath: number[];
 
   /** The question to ask the user. */

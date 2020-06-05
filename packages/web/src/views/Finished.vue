@@ -23,9 +23,9 @@
   import { list } from '@/i18n/functions'
 
   /**
-   * Displayed when all surveys are complete. Displays the proper instructions for the final
-   * incident level.
-   */
+  * Displayed when all surveys are complete. Displays the proper instructions for the final
+  * incident level.
+  */
 
   @Component({
     components: { Incident, SeriousIncident, Accident }
@@ -46,9 +46,9 @@
     }
 
     /**
-     * @return A localized list of the applicable regulations in 49 CFR, or `null` if no regulations
-     * apply.
-     */
+    * @return A localized list of the applicable regulations in 49 CFR, or `null` if no regulations
+    * apply.
+    */
 
     get regulationList(): string | null {
       if (this.allApplicableRegulations.size === 0) return null

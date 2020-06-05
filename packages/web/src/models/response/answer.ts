@@ -7,9 +7,9 @@ import {
 export interface QuestionResponseNode {
 
   /**
-   * For each {@link Option} under {@link Question.options}, this array contains either an
-   * ActionNode if the user chose that option, or `undefined` if not.
-   */
+  * For each {@link Option} under {@link Question.options}, this array contains either an
+  * ActionNode if the user chose that option, or `undefined` if not.
+  */
 
   nodes: (ActionResponseNode | undefined)[];
 }
@@ -22,9 +22,9 @@ export interface QuestionResponseNode {
 export interface ActionResponseNode {
 
   /**
-   * The next node this node is linking to. If {@link .endNode}, this is the end of a path in the
-   * response tree.
-   */
+  * The next node this node is linking to. If {@link .endNode}, this is the end of a path in the
+  * response tree.
+  */
 
   next: QuestionResponseNode | EndNode;
 }

@@ -3,8 +3,8 @@
     <checkmark />
     <div class="option-link">
       <a href="#"
-         @click.prevent.stop="clicked()"
-         :data-cy="option.identifier">
+        @click.prevent.stop="clicked()"
+        :data-cy="option.identifier">
         {{title}}
       </a>
       <p v-if="subtitle" class="option-subtitle">{{subtitle}}</p>
@@ -21,9 +21,9 @@
   import Checkmark from '@/components/Question/multi/Checkmark.vue'
 
   /**
-   * Displays an {@link Option} for a {@link MultiQuestion}. The source of truth for whether an
-   * option is selected is {@link MultiQuestion.choices}.
-   */
+  * Displays an {@link Option} for a {@link MultiQuestion}. The source of truth for whether an
+  * option is selected is {@link MultiQuestion.choices}.
+  */
 
   @Component({
     components: { Checkmark }
@@ -33,9 +33,9 @@
     @Prop({ type: Boolean, default: false }) selected!: boolean
 
     /**
-     * @return A subtitle to display below the option, if any is specified in the
-     * {@link Option.data} attribute.
-     */
+    * @return A subtitle to display below the option, if any is specified in the
+    * {@link Option.data} attribute.
+    */
 
     get subtitle(): TranslateResult | null {
       if (isUndefined(this.option.data.subtitle)) {

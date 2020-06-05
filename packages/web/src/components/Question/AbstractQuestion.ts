@@ -42,9 +42,9 @@ export default class AbstractQuestion extends Vue {
   }
 
   /**
-   * @return A globally unique key for this question that can be used to animate between
-   * questions.
-   */
+  * @return A globally unique key for this question that can be used to animate between
+  * questions.
+  */
 
   get transitionKey(): string {
     return `${this.prompt.surveyID}.${this.prompt.question.identifier}`;

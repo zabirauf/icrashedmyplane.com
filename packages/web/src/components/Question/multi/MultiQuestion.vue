@@ -55,31 +55,31 @@ export default class MultiQuestion extends AbstractQuestion {
   @Getter userFlags!: Set<Flag>;
 
   /**
-   * Stores the choices the user has made as an array of booleans, indexed by the {@link Option}'s
-   * position in the {@link Question.options} array.
-   */
+  * Stores the choices the user has made as an array of booleans, indexed by the {@link Option}'s
+  * position in the {@link Question.options} array.
+  */
 
   choices: boolean[] = [];
 
   /**
-   * Resets the {@link .choices} array when a new question is shown.
-   */
+  * Resets the {@link .choices} array when a new question is shown.
+  */
 
   protected promptChanged(): void {
     this.choices = [];
   }
 
   /**
-   * @return A list of options that do not belong to a category.
-   */
+  * @return A list of options that do not belong to a category.
+  */
 
   get uncategorizedOptions(): Option[] {
     return this.filteredOptions.filter(option => isUndefined(option.data.category));
   }
 
   /**
-   * @return A dictionary mapping category identifiers to an array of options for that category.
-   */
+  * @return A dictionary mapping category identifiers to an array of options for that category.
+  */
 
   get optionsByCategory(): { [key: string]: Option[] } {
     return groupBy(
@@ -95,8 +95,8 @@ export default class MultiQuestion extends AbstractQuestion {
   }
 
   /**
-   * @return A set of option identifiers representing the selected options.
-   */
+  * @return A set of option identifiers representing the selected options.
+  */
 
   get selections(): Set<string> {
     return this.question.options.reduce(
@@ -106,9 +106,9 @@ export default class MultiQuestion extends AbstractQuestion {
   }
 
   /**
-   * @return The title of the "next" button. Says "None of the above" until the user makes a
-   * selection, to help them understand they can continue with nothing selected.
-   */
+  * @return The title of the "next" button. Says "None of the above" until the user makes a
+  * selection, to help them understand they can continue with nothing selected.
+  */
 
   get nextButtonTitle(): TranslateResult {
     return isEmpty(this.selections)
@@ -117,10 +117,10 @@ export default class MultiQuestion extends AbstractQuestion {
   }
 
   /**
-   * Called when the user selects an option. Adds to the {@link .choices} array.
-   *
-   * @param identifier The identifier of the {@link Option}.
-   */
+  * Called when the user selects an option. Adds to the {@link .choices} array.
+  *
+  * @param identifier The identifier of the {@link Option}.
+  */
 
   toggle(identifier: string): void {
     const index = this.question.options.findIndex(o => o.identifier === identifier);
@@ -128,9 +128,9 @@ export default class MultiQuestion extends AbstractQuestion {
   }
 
   /**
-   * Called when the "Next" button is clicked. Records the answer to the store. Emits an error to
-   * the {@link ErrorBus} if that fails.
-   */
+  * Called when the "Next" button is clicked. Records the answer to the store. Emits an error to
+  * the {@link ErrorBus} if that fails.
+  */
 
   async answerChosen(): Promise<void> {
     console.log(this.prompt, this.choices);

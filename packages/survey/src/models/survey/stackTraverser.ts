@@ -9,11 +9,11 @@ import { SurveyTraverser } from './traverser';
 
 export interface SurveyStackVisitor {
   /**
-   * Called when a node is visited in the {@link Survey} tree.
-   *
-   * @param nodes The stack of nodes visited, leading up to and including, the current node.
-   * @return `true` to continue traversing, `false` to end all traversing (of the whole tree).
-   */
+  * Called when a node is visited in the {@link Survey} tree.
+  *
+  * @param nodes The stack of nodes visited, leading up to and including, the current node.
+  * @return `true` to continue traversing, `false` to end all traversing (of the whole tree).
+  */
 
   visitNode: (nodes: SurveyNode[]) => boolean;
 }
@@ -25,18 +25,18 @@ export interface SurveyStackVisitor {
 
 export default class SurveyStackTraverser {
   /**
-   * Creates a new traverser for a Survey.
-   *
-   * @param survey The Survey to traverse.
-   */
+  * Creates a new traverser for a Survey.
+  *
+  * @param survey The Survey to traverse.
+  */
 
   constructor(public survey: Survey) {}
 
   /**
-   * Call this method to begin traversal.
-   *
-   * @param visitor The object to receive callback functions as nodes are visited during traversal.
-   */
+  * Call this method to begin traversal.
+  *
+  * @param visitor The object to receive callback functions as nodes are visited during traversal.
+  */
 
   traverse(visitor: SurveyStackVisitor): void {
     const stack: SurveyNode[] = [];

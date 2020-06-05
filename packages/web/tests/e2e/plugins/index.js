@@ -14,7 +14,7 @@ module.exports = (on, config) => {
     webpackOptions: {
 
       /* Make module resolution in the Cypress environment the same as in the app environment. This
-         allows us to import app code within Cypress tests. */
+        allows us to import app code within Cypress tests. */
 
       resolve: {
         extensions: ['.ts', '.tsx', '.js'],

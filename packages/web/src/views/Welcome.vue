@@ -26,8 +26,8 @@
   import { Action } from 'vuex-class'
 
   /**
-   * Displayed if no surveys have been started. Introduces the user to the website.
-   */
+  * Displayed if no surveys have been started. Introduces the user to the website.
+  */
 
   @Component
   export default class Welcome extends Vue {

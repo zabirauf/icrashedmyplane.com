@@ -21,10 +21,10 @@
   import Question from '@/components/Question/Question.vue'
 
   /**
-   * Root container for the application. Displays the {@link Welcome} view if no surveys have been
-   * started, or the {@link Question} view if a survey is in progress, or the {@link Finished} view
-   * if all surveys are complete.
-   */
+  * Root container for the application. Displays the {@link Welcome} view if no surveys have been
+  * started, or the {@link Question} view if a survey is in progress, or the {@link Finished} view
+  * if all surveys are complete.
+  */
 
   @Component({
     components: { Question, Finished, Welcome }
@@ -35,9 +35,9 @@
     @Getter response!: (identifier: string) => Response
 
     /**
-     * @return The next question to display to the user, or `undefined` if there are no more
-     * questions to ask, or the user hasn't started a survey yet.
-     */
+    * @return The next question to display to the user, or `undefined` if there are no more
+    * questions to ask, or the user hasn't started a survey yet.
+    */
 
     get nextPrompt(): Prompt | undefined {
       if (!this.clickedContinue) return undefined

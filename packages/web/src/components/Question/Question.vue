@@ -48,9 +48,9 @@
   import * as Survey from 'i-just-crashed-my-plane-survey'
 
   /**
-   * Container view that displays either a {@link SingleQuestion} or a {@link MultiQuestion}
-   * depending on whether the {@link Survey.Question} is single- or multiple-choice.
-   */
+  * Container view that displays either a {@link SingleQuestion} or a {@link MultiQuestion}
+  * depending on whether the {@link Survey.Question} is single- or multiple-choice.
+  */
 
   @Component({
     components: { Error, MultiQuestion, SingleQuestion }
@@ -91,9 +91,9 @@
     }
 
     /**
-     * @return The localized text for the {@link Option} that the user chose that led to this
-     * question being asked, or `null` if this is a root-level question.
-     */
+    * @return The localized text for the {@link Option} that the user chose that led to this
+    * question being asked, or `null` if this is a root-level question.
+    */
 
     get selectedOptionTitle(): TranslateResult | null {
       const option = <Survey.Option | undefined>findLast(this.prompt.questionPath, (node, index) =>
